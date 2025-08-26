@@ -1,0 +1,69 @@
+
+.cell {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s;
+    font-family: 'Courier New', monospace;
+}
+
+.cell:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.cell-hidden {
+    background-color: #d1d5db;
+    border: 3px outset #9ca3af;
+}
+
+.cell-revealed {
+    background-color: #e5e7eb;
+    border: 1px solid #9ca3af;
+}
+
+.cell-flagged {
+    background-color: #fca5a5;
+    color: #dc2626;
+}
+
+.cell-mine {
+    background-color: #ef4444;
+    color: white;
+}
+
+.cell-mine::before {
+    content: '💣';
+}
+
+.number-1 { color: #2563eb; }
+.number-2 { color: #16a34a; }
+.number-3 { color: #dc2626; }
+.number-4 { color: #7c3aed; }
+.number-5 { color: #d97706; }
+.number-6 { color: #0891b2; }
+.number-7 { color: #000000; }
+.number-8 { color: #4b5563; }
+
+.game-over .cell {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+#game-board {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+    .cell {
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+    }
+}
